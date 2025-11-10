@@ -17,6 +17,6 @@ RUN uv sync
 
 COPY handler.py .
 
-ENV PYTHONPATH ="/var/task/.venv/lib/python3.12/site-packages"
+ENV PYTHONPATH ="/var/task/.venv/lib/python3.13/site-packages"
 
 CMD ["handler.exif_handler"]
