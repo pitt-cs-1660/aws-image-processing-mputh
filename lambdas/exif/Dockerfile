@@ -13,10 +13,10 @@ WORKDIR /var/task
 
 COPY pyproject.toml .
 
-RUN uv sync
+RUN uv sync --no-dev
 
 COPY handler.py .
 
-ENV PYTHONPATH ="/var/task/.venv/lib/python3.13/site-packages"
+ENV PYTHONPATH="/var/task/.venv/lib/python3.13/site-packages:${LAMBDA_RUNTIME_DIR}"
 
 CMD ["handler.exif_handler"]
